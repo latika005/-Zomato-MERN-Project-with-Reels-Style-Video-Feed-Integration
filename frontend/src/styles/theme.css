@@ -1,0 +1,25 @@
+/* Light Theme */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #dddddd;
+    --container-bg: #f9f9f9;
+    --input-bg: #ffffff;
+    --primary-color: #007bff;
+    --button-text-color: #ffffff;
+    --primary-color-hover: #0056b3;
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: #f1f1f1;
+        --border-color: #333333;
+        --container-bg: #1e1e1e;
+        --input-bg: #2a2a2a;
+        --primary-color: #1e90ff;
+        --button-text-color: #ffffff;
+        --primary-color-hover: #1c7ed6;
+    }
+}

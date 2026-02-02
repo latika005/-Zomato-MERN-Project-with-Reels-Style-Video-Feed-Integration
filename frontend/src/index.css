@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import '../src/styles/theme.css';
+
+body {
+    font-family: 'Roboto', sans-serif; /* Changed font to Roboto */
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px; /* Increased padding */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--container-bg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    padding: 12px; /* Slightly increased padding for inputs */
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+button {
+    padding: 12px; /* Slightly increased padding for buttons */
+    border: none;
+    border-radius: 20px;
+    background-color: #ff5722; /* Changed button color */
+    color: #ffffff; /* Ensured text color contrasts well */
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e64a19; /* Darker shade for hover effect */
+}
+
+button:active {
+    background-color: #d84315; /* Even darker shade for active state */
+    transform: scale(0.98);
+}
+p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+/* Center the "Sign Up" text */
+.signup-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Style the "Sign Up" hyperlink */
+.signup-link {
+    color: #ff5722; /* Same color as the button */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+.signup-link:active {
+    color: #e64a19; /* Slightly darker shade for active state */
+}
+
+/* Center the "Sign Up" text */
+.signup-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Style the "Sign Up" hyperlink */
+.signup-link {
+    color: #ff5722; /* Same color as the button */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+.signup-link:active {
+    color: #e64a19; /* Slightly darker shade for active state */
+}
