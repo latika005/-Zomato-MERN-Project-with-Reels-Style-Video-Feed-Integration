@@ -178,4 +178,5 @@ function LogoutFoodPartner(req, res){
     });
 }
 
-export default { UserRegister, UserLogin, LogOut , RegisterFoodPartner, LoginFoodPartner, LogoutFoodPartner};
+export default { UserRegister, UserLogin, LogOut , RegisterFoodPartner, LoginFoodPartner, LogoutFoodPartner };
+
