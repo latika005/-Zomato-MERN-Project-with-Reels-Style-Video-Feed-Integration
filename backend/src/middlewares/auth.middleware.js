@@ -28,7 +28,7 @@ async function authFoodPartnerMiddleware(req, res, next){
     }
 }
 
-async function authUseriddleware(req, res, next){
+async function authUsermiddleware(req, res, next){
 
     const token = req.cookies.token;
 
@@ -41,7 +41,7 @@ async function authUseriddleware(req, res, next){
     try{
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
-        const user = await userModel.findById(decoded)
+        const user = await userModel.findById(decoded.id)
 
         req.user = user;
 
@@ -54,5 +54,5 @@ async function authUseriddleware(req, res, next){
     }
 }
 
-export default {   authFoodPartnerMiddleware , authUseriddleware  };
+export default {   authFoodPartnerMiddleware , authUsermiddleware  };
 

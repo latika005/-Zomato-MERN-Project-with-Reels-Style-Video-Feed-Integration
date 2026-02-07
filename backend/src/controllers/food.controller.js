@@ -3,6 +3,9 @@ import { v4 as uuid } from "uuid";
 import foodModel from "../models/food.model.js"
 
 async function createFood(req, res) {
+//   console.log("req.file:", req.file);
+// console.log("req.body:", req.body);
+
   const fileUploadResult = await uploadFile(
     req.file.buffer,
     uuid()
@@ -25,9 +28,9 @@ async function createFood(req, res) {
 
 async function getFoodItems(req, res){
   const foodItems = await foodModel.find({});
-  return res.status(200).json({
+  res.status(200).json({
     message : "Food items fetched successfully",
-    foodItems
+    foodItems,
   })
 }
 
