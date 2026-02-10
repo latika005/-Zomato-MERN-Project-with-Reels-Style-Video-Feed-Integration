@@ -1,0 +1,177 @@
+/* ================= PAGE ================= */
+
+.fp-container {
+    padding: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: var(--text-color);
+  }
+  
+  .fp-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .fp-muted {
+    font-size: 13px;
+    opacity: 0.65;
+    margin-bottom: 16px;
+  }
+  
+  /* ================= HEADER ================= */
+  
+  .fp-header {
+    background-color: var(--container-bg);
+    border-radius: 18px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  /* LEFT SIDE */
+  
+  .fp-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .fp-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    flex-shrink: 0;
+  }
+  
+  .fp-info {
+    display: flex;
+    flex-direction: column;
+    text-size-adjust: 100%;
+  }
+  
+  .fp-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .fp-address {
+    font-size: 13px;
+    opacity: 0.65;
+    margin: 2px 0 6px;
+  }
+  
+  /* ACTION LINKS */
+  
+  .fp-actions {
+    display: flex;
+    gap: 14px;
+  }
+  
+  .fp-link {
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .fp-link:first-child {
+    color: #ff4d4d;
+  }
+  
+  .fp-link:last-child {
+    color: #ff4d4d;
+  }
+  
+  /* ================= STATS (FIXED ALIGNMENT) ================= */
+
+.fp-stats {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    /* justify-content: space-around; */
+  }
+  
+  .fp-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 120px;
+  }
+  
+  .fp-stat-label {
+    font-size: 12px;
+    opacity: 0.65;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  
+  .fp-stat-value {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+  }
+  
+  
+  /* ================= REELS SECTION ================= */
+  
+  .fp-section-header {
+    margin-top: 32px;
+    margin-bottom: 14px;
+  }
+  
+  .fp-section-title {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  /* ================= VIDEO GRID ================= */
+  
+  .fp-video-grid {
+    display: grid;
+    gap: 14px;
+  
+    /* Prevent huge cards on desktop */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  
+  .fp-video-card {
+    background-color: var(--container-bg);
+    border-radius: 14px;
+  
+    aspect-ratio: 1 / 1;
+    width: 100%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-size: 14px;
+    opacity: 0.75;
+    cursor: pointer;
+  
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  
+  .fp-video-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* ================= RESPONSIVE ================= */
+  
+  @media (max-width: 640px) {
+    .fp-header {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .fp-stats {
+      justify-content: flex-start;
+    }
+  }
+  
