@@ -11,6 +11,14 @@ router.post('/',
     /* GET /api/food/ - public (no auth required for home feed) */
 router.get("/", foodController.getFoodItems);
 
+router.post("/:id/like", 
+    authMiddleware.authUsermiddleware, 
+    foodController.likeFood);
+
+router.post("/save", 
+    authMiddleware.authUsermiddleware, 
+    foodController.saveFood);
+
 
 
 export default router;

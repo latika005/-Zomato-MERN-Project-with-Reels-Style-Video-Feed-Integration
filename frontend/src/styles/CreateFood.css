@@ -1,0 +1,130 @@
+/* Page wrapper */
+.create-food-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Card container */
+.create-food-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--container-bg);
+  border-radius: 16px;
+  padding: 20px 20px 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--border-color);
+}
+
+.create-food-card h1 {
+  margin: 0 0 16px;
+  font-size: 24px;
+}
+
+.create-food-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+.hint {
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.preview-wrapper {
+  margin-top: 8px;
+}
+
+.preview-label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.preview-video {
+  width: 100%;
+  max-height: 420px;
+  border-radius: 12px;
+  background-color: #000;
+  object-fit: cover;
+}
+
+.submit-button {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 999px;
+  border: none;
+  background-color: #ff5722;
+  color: var(--button-text-color);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-button:hover {
+  background-color: #e64a19;
+}
+
+.submit-button:active {
+  transform: scale(0.98);
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .create-food-page {
+    align-items: flex-start;
+    padding-top: 16px;
+  }
+
+  .create-food-card {
+    max-width: 380px;
+    padding: 16px 14px 18px;
+    border-radius: 12px;
+  }
+
+  .create-food-card h1 {
+    font-size: 20px;
+  }
+}
+

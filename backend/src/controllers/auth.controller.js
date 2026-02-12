@@ -2,6 +2,7 @@ import userModel from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import foodPartnerModel from "../models/foodpartner.model.js";
+import foodModel from "../models/food.model.js";
 
 
 async function UserRegister(req, res){
@@ -180,6 +181,30 @@ async function LoginFoodPartner(req, res){
 
 }
 
+async function GetFoodPartnerProfile(req, res) {
+  try {
+    const { id } = req.params;
+
+    const foodPartner = await foodPartnerModel.findById(id).lean();
+    if (!foodPartner) {
+      return res.status(404).json({ message: "Food Partner not found" });
+    }
+
+    const foodItems = await foodModel.find({ foodPartner: id }).lean();
+
+    return res.status(200).json({
+      message: "Food Partner profile fetched successfully",
+      foodPartner: {
+        ...foodPartner,
+        foodItems,
+      },
+    });
+  } catch (err) {
+    console.error("Error fetching food partner profile", err);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+}
+
 function LogoutFoodPartner(req, res){
     res.clearCookie("token");
     return res.status(200).json({
@@ -187,5 +212,5 @@ function LogoutFoodPartner(req, res){
     });
 }
 
-export default { UserRegister, UserLogin, LogOut , RegisterFoodPartner, LoginFoodPartner, LogoutFoodPartner };
+export default { UserRegister, UserLogin, LogOut , RegisterFoodPartner, LoginFoodPartner, LogoutFoodPartner, GetFoodPartnerProfile };
 

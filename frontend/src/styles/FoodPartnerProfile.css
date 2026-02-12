@@ -43,6 +43,10 @@
     height: 56px;
     border-radius: 50%;
     background-color: var(--border-color);
+    background-image: url("https://plus.unsplash.com/premium_photo-1747078152080-a9e9c22ec7f7?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     flex-shrink: 0;
   }
   
@@ -129,37 +133,52 @@
     margin: 0;
   }
   
-  /* ================= VIDEO GRID ================= */
-  
-  .fp-video-grid {
-    display: grid;
-    gap: 14px;
-  
-    /* Prevent huge cards on desktop */
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
-  
-  .fp-video-card {
+/* ================= VIDEO GRID ================= */
+
+.fp-video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.fp-video-card {
     background-color: var(--container-bg);
     border-radius: 14px;
-  
-    aspect-ratio: 1 / 1;
-    width: 100%;
-  
+    flex: 1 1 220px;        /* base width for each card */
+    max-width: 260px;       /* prevent overly wide cards on large screens */
+    overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: center;
-  
+    flex-direction: column;
     font-size: 14px;
-    opacity: 0.75;
+    opacity: 0.9;
     cursor: pointer;
-  
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  
+  .fp-video-card span {
+    display: block;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 13px;
+  }
   .fp-video-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Actual video element inside the card */
+  .fp-video {
+    width: 100%;
+  /* Make videos a bit more squarish (less tall) */
+  aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+  }
+  /* Text/description under each video */
+  .fp-video-card span {
+    display: block;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 13px;
   }
   
   /* ================= RESPONSIVE ================= */
@@ -172,6 +191,10 @@
   
     .fp-stats {
       justify-content: flex-start;
+    }
+
+    .fp-video-grid {
+      justify-content: center; /* center cards in rows on mobile */
     }
   }
   

@@ -95,3 +95,61 @@
 .action-button:active {
     transform: scale(0.95);    /* Feedback when clicked */
 }
+
+.reel {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.reel-actions {
+    position: absolute;
+    right: 20px;
+    bottom: 72px;      /* ⬇️ lower the entire stack */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;         /* ⬆️ increased spacing */
+    z-index: 10;
+}
+
+.reel-actions i {
+    font-size: 28px;   /* slightly smaller for cleaner look */
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.reel-actions i:hover {
+    transform: scale(1.15);
+    opacity: 0.9;
+}
+
+.icon-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    gap: 6px;
+}
+
+.reel-actions i {
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.reel-actions i:hover {
+    transform: scale(1.15);
+}
+
+/* 🔥 Pastel Red Like */
+.liked {
+    color: #ff6b81;  /* pastel red */
+}

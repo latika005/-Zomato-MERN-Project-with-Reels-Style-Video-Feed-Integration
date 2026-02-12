@@ -7,20 +7,22 @@ const Profile = () => {
   const { id } = useParams();
   const [profile, setProfile] = useState(null);
 
-  const videos = Array.from({ length: 6 }).map((_, i) => ({
-    id: `v-${i}`,
-    label: `Video ${i + 1}`,
-  }));
+  const [videos, setVideos] = useState([]);
+  // const videos = Array.from({ length: 6 }).map((_, i) => ({
+  //   id: `v-${i}`,
+  //   label: `Video ${i + 1}`,
+  // }));
 
   useEffect(() => {
     if (!id) return;
 
     axios
-      .get(`http://localhost:3000/api/foodpartner/${id}`, {
+      .get(`http://localhost:3000/api/auth/foodpartner/${id}`, {
         withCredentials: true,
       })
       .then((res) => {
         setProfile(res.data.foodPartner);
+        setVideos(res.data.foodPartner?.foodItems || []);
       })
       .catch((err) => {
         console.error("Failed to fetch food partner profile", err);
@@ -94,12 +96,13 @@ const Profile = () => {
       <div className="fp-video-grid">
         {videos.map((v) => (
           <div
-            key={v.id}
+            key={v._id || v.id}
             className="fp-video-card"
             role="button"
             tabIndex={0}
           >
-            <span>{v.label}</span>
+            <video src={v.video} muted className="fp-video" />
+            <span>{v.description || v.name}</span>
           </div>
         ))}
       </div>
